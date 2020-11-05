@@ -13,8 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    @if(Auth::user()->idRole == 0)
+                    {{ __('You are logged in as administrator!') }}
+                    @endif
+                    @if(Auth::user()->idRole == 1)
+                    {{ __('You are logged in as user!') }}
+                    @endif
+                    @if(Auth::user()->idRole == 2)
+                    {{ __('You are logged in as expert!') }}
+                    @endif
                 </div>
             </div>
         </div>
