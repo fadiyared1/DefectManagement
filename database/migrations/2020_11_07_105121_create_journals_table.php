@@ -14,7 +14,19 @@ class CreateJournalsTable extends Migration
     public function up()
     {
         Schema::create('journals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+
+            $table->UnsignedBigInteger('idDefect');
+            $table->foreign(idDefect)->references('id')->on('defect');
+
+            $table->UnsignedBigInteger('idExpert');
+            $table->foreign(idExpert)->references('id')->on('user');
+
+            $table->UnsignedBigInteger('idStatus');
+            $table->foreign(idStatus)->references('id')->on('status');
+
+            $table->timestamps('lastUpdate');
+
             $table->timestamps();
         });
     }
