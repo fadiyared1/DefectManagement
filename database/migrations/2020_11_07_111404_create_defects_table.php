@@ -20,8 +20,8 @@ class CreateDefectsTable extends Migration
             $table->string('expectedReason');
             $table->timestamp('dateOfDefect');
 
-            $table->Integer('idUser');
-           // $table->foreign(idUser)->references('id')->on('user');
+            $table->unsignedBigInteger('idUser');
+            $table->foreign('idUser')->references('id')->on('user');
 
 
             $table->timestamps();
