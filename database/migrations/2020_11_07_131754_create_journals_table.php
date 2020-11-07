@@ -13,7 +13,9 @@ class CreateJournalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('journal', function (Blueprint $table) {
+        Schema::create('journals', function (Blueprint $table) {
+            
+
             $table->increments('id');
 
             $table->unsignedBigInteger('idDefect');
@@ -25,9 +27,10 @@ class CreateJournalsTable extends Migration
             $table->unsignedBigInteger('idStatus');
             $table->foreign('idStatus')->references('id')->on('status');
 
-            //$table->timestamps('lastUpdate');
-
             $table->timestamps();
+
+
+
         });
     }
 
@@ -38,6 +41,6 @@ class CreateJournalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('journal');
+        Schema::dropIfExists('journals');
     }
 }
