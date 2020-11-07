@@ -16,13 +16,13 @@ class CreateJournalsTable extends Migration
         Schema::create('journal', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->Integer('idDefect');
+            $table->unsignedBigInteger('idDefect');
             $table->foreign('idDefect')->references('id')->on('defect');
 
-            $table->Integer('idExpert');
+            $table->unsignedBigInteger('idExpert');
             $table->foreign('idExpert')->references('id')->on('user');
 
-            $table->Integer('idStatus');
+            $table->unsignedBigInteger('idStatus');
             $table->foreign('idStatus')->references('id')->on('status');
 
             //$table->timestamps('lastUpdate');
