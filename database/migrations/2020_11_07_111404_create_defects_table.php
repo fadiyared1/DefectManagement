@@ -13,8 +13,17 @@ class CreateDefectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('defects', function (Blueprint $table) {
-            $table->id();
+        Schema::create('defect', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('description');
+            $table->string('expectedReason');
+            $table->timestamp('dateOfDefect');
+
+            $table->UnsignedBigInteger('idUser');
+            $table->foreign(idUser)->references('id')->on('user');
+
+
             $table->timestamps();
         });
     }
