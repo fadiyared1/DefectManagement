@@ -25,7 +25,7 @@ class CreateJournalsTable extends Migration
             $table->Integer('idStatus');
             //$table->foreign(idStatus)->references('id')->on('status');
 
-            $table->timestamps('lastUpdate');
+            //$table->timestamps('lastUpdate');
 
             $table->timestamps();
         });
