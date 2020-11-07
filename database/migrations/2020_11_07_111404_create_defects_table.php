@@ -20,7 +20,7 @@ class CreateDefectsTable extends Migration
             $table->string('expectedReason');
             $table->timestamp('dateOfDefect');
 
-            $table->UnsignedBigInteger('idUser');
+            $table->Integer('idUser');
             $table->foreign(idUser)->references('id')->on('user');
 
 
