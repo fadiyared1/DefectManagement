@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Admin Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,15 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @if(Auth::user()->idRole == 0)
-                    {{ __('You are logged in as administrator!') }}
-                    @endif
-                    @if(Auth::user()->idRole == 1)
-                    {{ __('You are logged in as user!') }}
-                    @endif
-                    @if(Auth::user()->idRole == 2)
-                    {{ __('You are logged in as expert!') }}
-                    @endif
+
+                    {{ __('You are logged in as an administrator!') }}
                 </div>
             </div>
         </div>
