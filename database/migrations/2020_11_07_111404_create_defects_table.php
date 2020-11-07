@@ -21,7 +21,7 @@ class CreateDefectsTable extends Migration
             $table->timestamp('dateOfDefect');
 
             $table->Integer('idUser');
-            //$table->foreign(idUser)->references('id')->on('user');
+            $table->foreign(idUser)->references('id')->on('user');
 
 
             $table->timestamps();
