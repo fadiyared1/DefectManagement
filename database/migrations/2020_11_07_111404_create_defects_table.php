@@ -35,6 +35,6 @@ class CreateDefectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('defects');
+        Schema::dropIfExists('defect');
     }
 }
