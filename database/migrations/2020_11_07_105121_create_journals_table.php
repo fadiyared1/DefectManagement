@@ -27,7 +27,7 @@ class CreateJournalsTable extends Migration
 
             //$table->timestamps('lastUpdate');
 
-            $table->timestamps('lastUpdate');
+            $table->timestamps();
         });
     }
 
