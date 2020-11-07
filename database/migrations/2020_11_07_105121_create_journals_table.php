@@ -17,7 +17,7 @@ class CreateJournalsTable extends Migration
             $table->increments('id');
 
             $table->Integer('idDefect');
-            $table->foreign(idDefect)->references('id')->on('defect');
+           // $table->foreign(idDefect)->references('id')->on('defect');
 
             $table->Integer('idExpert');
            // $table->foreign(idExpert)->references('id')->on('user');
