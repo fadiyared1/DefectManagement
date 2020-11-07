@@ -19,13 +19,13 @@ class CreateJournalsTable extends Migration
             $table->increments('id');
 
             $table->unsignedBigInteger('idDefect');
-            $table->foreign('idDefect')->references('id')->on('defect');
+            $table->foreign('idDefect')->references('id')->on('defect')->onDelete('cascade');
 
             $table->unsignedBigInteger('idExpert');
-            $table->foreign('idExpert')->references('id')->on('user');
+            $table->foreign('idExpert')->references('id')->on('user')->onDelete('cascade');
 
             $table->unsignedBigInteger('idStatus');
-            $table->foreign('idStatus')->references('id')->on('status');
+            $table->foreign('idStatus')->references('id')->on('status')->onDelete('cascade');
 
             $table->timestamps();
 
