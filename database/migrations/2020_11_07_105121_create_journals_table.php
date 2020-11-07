@@ -20,10 +20,10 @@ class CreateJournalsTable extends Migration
             $table->foreign(idDefect)->references('id')->on('defect');
 
             $table->Integer('idExpert');
-            $table->foreign(idExpert)->references('id')->on('user');
+           // $table->foreign(idExpert)->references('id')->on('user');
 
             $table->Integer('idStatus');
-            $table->foreign(idStatus)->references('id')->on('status');
+            //$table->foreign(idStatus)->references('id')->on('status');
 
             $table->timestamps('lastUpdate');
 
