@@ -18,7 +18,15 @@ class CreateStatusesTable extends Migration
             $table->string('status');
             $table->timestamps();
         });
+
+        DB::table('status')->insert(
+            array(
+                
+                'status' => 'pendig'
+            )
+        );
     }
+    
 
     /**
      * Reverse the migrations.
