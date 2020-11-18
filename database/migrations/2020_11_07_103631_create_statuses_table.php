@@ -19,12 +19,7 @@ class CreateStatusesTable extends Migration
             $table->timestamps();
         });
 
-        DB::table('status')->insert(
-            array(
-                
-                'status' => 'pendig'
-            )
-        );
+        
     }
     
 
