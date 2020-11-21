@@ -22,7 +22,7 @@ class CreateJournalsTable extends Migration
             $table->foreign('idDefect')->references('id')->on('defect');
 
             $table->unsignedBigInteger('idExpert');
-            $table->foreign('idExpert')->references('id')->on('user');
+            $table->foreign('idExpert')->references('id')->on('users');
 
             $table->unsignedBigInteger('idStatus');
             $table->foreign('idStatus')->references('id')->on('status');
