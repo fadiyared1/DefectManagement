@@ -14,13 +14,16 @@
                         </div>
                     @endif
                     @if(Auth::user()->idRole == 0)
-                    {{ __('You are logged in as administrator!') }}
+                    <?php return redirect()->route('admin', ['id'=>user()->id])
+                    ?>
                     @endif
                     @if(Auth::user()->idRole == 1)
-                    {{ __('You are logged in as user!') }}
+                    <?php return redirect('/user');
+                    ?>
                     @endif
                     @if(Auth::user()->idRole == 2)
-                    {{ __('You are logged in as expert!') }}
+                    <?php return redirect()->route('expert', ['id'=>user()->id])
+                    ?>
                     @endif
                 </div>
             </div>
