@@ -59,20 +59,28 @@
                         <img src="{{url('/images/plan5.png')}}" alt="plan" width="650"
                                  height="570" id="plan">
                          </div>
-                         <footer>
                          
-                          <p>contact us:</p>
-                          <p>+96176010434</p>
-                          <p>+96171700552</p>
-                         
-                          <p><a href="mailto:201710460@ua.edu.lb">201710460@ua.edu.lbb</a></p>
-                          <p><a href="mailto:201710493@ua.edu.lb">201710493@ua.edu.lbb</a></p>
-                         
-                        </footer>
                 </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--<footer id="footer1">-->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">      
+    <p>contact us:
+    <ul>
+        <li>+96176010434</li>
+        <li><a href="mailto:201710460@ua.edu.lb">201710460@ua.edu.lbb</a></li>
+    </ul>
+    </p>
+   <!-- <p>+96176010434</p>
+    <p>+96171700552</p>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    <p><a href="mailto:201710460@ua.edu.lb">201710460@ua.edu.lbb</a></p>
+    <p><a href="mailto:201710493@ua.edu.lb">201710493@ua.edu.lbb</a></p>
+    </div>
+    
+</footer>-->
+</nav>
 @endsection
