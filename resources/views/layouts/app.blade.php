@@ -74,7 +74,22 @@
 
         <main class="py-4">
             @yield('content')
-        </main>
+
+        </main>           
+    
+        
     </div>
+     
 </body>
+<footer id="footer">
+    <nav class="navbar navbar-light bg-white shadow-sm">   
+        <!-- <ul class="navbar-nav ml-auto"> -->
+            
+     <p>contact us:</p>
+     <ul class="navbar-nav ml-auto">
+         <li class="nav-item">+96176010434</li>
+         <li class="nav-item"><a href="mailto:201710460@ua.edu.lb">201710460@ua.edu.lb</a></li>
+     </ul>
+    </nav>
+</footer>
 </html>
