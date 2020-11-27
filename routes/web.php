@@ -34,9 +34,7 @@ Route::get('/expert/view', [App\Http\Controllers\ExpertController::class, 'view'
 Route::get('/expert/oldDefects', [App\Http\Controllers\ExpertController::class, 'oldDefects'])->name('oldDefects');
 Route::get('/expert/changepass', [App\Http\Controllers\ExpertController::class, 'changepass'])->name('changepass');
 Route::get('/user/defect/store',[App\Http\Controllers\DefectController::class, 'store'])->name('store');
+Route::get('/admin/addExpert', [App\Http\Controllers\AdminController::class, 'addExpert'])->name('addExpert');
+Route::post('admin/addExpert', 'AdminController@create')->name('admin.create');
 });
 
-//Route::get('view', function()
-//{
- //   return view('view');
-//});
