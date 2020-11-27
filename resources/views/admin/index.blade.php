@@ -20,7 +20,7 @@
                           <a class="nav-link" href="#">Old Defects</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Add Expert</a>
+                          <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{  url('admin/changepass') }}">Change Password</a>
@@ -57,8 +57,9 @@
                       <td>{{$def->title}}</td>
                       <td>{{$def->description}}</td>
                       <td>{{$def->expectedReason}}</td>
-                      <td>{{$def->idUser}}</td>
                       <td>{{$def->dateOfDefect}}</td>
+                      <td>{{$def->idUser}}</td>
+                      
                       <td class = "select"> 
                         <select>        
                                 <option value="volvo">Volvo</option>
