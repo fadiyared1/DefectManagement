@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{$url=URL::full();}}
-                    {{parse_url ( $url [, int $component = -1 ] ) : mixed}}
+
                 </div>
             </div>
         </div>
