@@ -13,7 +13,29 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div class="row justify-content-center">
+                    <h3>Describe what is happening with the {{$var2}} in the {{$var1}}</h3>
+                   <form action=" {{route('store')}}" method="HEAD">
+                        <div class="form-group">
+                            <div class="form-group">
+                               <!-- <label for="exampleFormControlTextarea1">Problem Description</label>-->
+                                <textarea class="form-control" id="description" name="description" rows="6"></textarea>
+                              </div>
+                              <div class="form-group">
+                                <div class="row justify-content-center">
+                                <label for="exampleFormControlTextarea1">Expected Reason</label>
+                                </div>
+                                <textarea class="form-control" id="expectedReason" name="expectedReason" rows="2"></textarea>
+                              </div>
+                              <input type="hidden" id="var1" name="var1" value={{$var1}}>
+                              <input type="hidden" id="var2" name="var2" value={{$var2}}>
+                              <div class="row justify-content-center">
+                              <button type="submit" class="btn btn-dark">Submit</button>
+                            </div>
+                            {!!Form::close()!!}
+                            <!--</form>-->
+                    </div>
+                    
                 </div>
             </div>
         </div>

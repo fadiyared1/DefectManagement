@@ -28,11 +28,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/admin/changepass', [App\Http\Controllers\AdminController::class, 'changepass'])->name('changepass');
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
-Route::get('/user/defect', [App\Http\Controllers\DefectController::class, 'index'])->name('index');
+Route::get('/user/defect', [App\Http\Controllers\UserController::class, 'defect'])->name('defect');
 Route::get('/expert', [App\Http\Controllers\ExpertController::class, 'index'])->name('expert');
 Route::get('/expert/view', [App\Http\Controllers\ExpertController::class, 'view'])->name('view');
 Route::get('/expert/oldDefects', [App\Http\Controllers\ExpertController::class, 'oldDefects'])->name('oldDefects');
 Route::get('/expert/changepass', [App\Http\Controllers\ExpertController::class, 'changepass'])->name('changepass');
+Route::get('/user/defect/store',[App\Http\Controllers\DefectController::class, 'store'])->name('store');
 });
 
 //Route::get('view', function()

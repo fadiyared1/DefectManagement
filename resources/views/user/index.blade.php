@@ -24,29 +24,30 @@
                         <!-- <div class="form-group">   -->
                                         <form method="HEAD" action="{{ url('user/defect') }}" >
                                         <label for="WC">WC<span class="WC"></span></label>
-                                        <select type="WC" class="WC" id="WC" name="WC" onchange="this.form.submit();">
+                                        <select type="WC" class="WC" id="room" name="room" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
-                                            <option value="ToiletSeat">Toilet Seat</option>
-                                            <option value="Door">Door </option>
-                                            <option value="Light">Light</option>
-                                            <option value="Sink">Sink</option>
-                                            <option value="otherwc">Other</option>
+                                            <option value="WC_ToiletSeat">Toilet Seat</option>
+                                            <option value="WC_Door">Door </option>
+                                            <option value="WC_Light">Light</option>
+                                            <option value="WC_Sink">Sink</option>
+                                            <option value="WC_other">Other</option>
                                             
                                         </select>
-                                        <input type="hidden" value="" />
+                                        <!--<input type="hidden" value=""/>-->
+                                        <!--<input type="text" />-->
                                         </form>
                          </div>              
                          <div class="row justify-content-center">  
                                         <form method="HEAD" action="{{ url('user/defect') }}" >
-                                        <label for="Lounge">Lounge<span class="Lounge"></span></label>
-                                        <select type="Lounge" class="Lounge" id="Lounge" name="Lounge" onchange="this.form.submit();">
+                                        <label for="Lobby">Lounge<span class="Lobby"></span></label>
+                                        <select type="Lobby" class="Lobby" id="room" name="room" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
-                                            <option value="TableChair">Table or chair</option>
-                                            <option value="Couch">Couch</option>
-                                            <option value="Door">Door</option>
-                                            <option value="Window">Window</option>
-                                            <option value="Light">Light</option>
-                                            <option value="otherlounge">Other</option>
+                                            <option value="Lobby_Table/Chair">Table or chair</option>
+                                            <option value="Lobby_Couch">Couch</option>
+                                            <option value="Lobby_Door">Door</option>
+                                            <option value="Lobby_Window">Window</option>
+                                            <option value="Lobby_Light">Light</option>
+                                            <option value="Lobby_other">Other</option>
                                         </select>
                                         <input type="hidden" value="" />
                                         </form>
@@ -54,15 +55,15 @@
                          <div class="row justify-content-center">
                                         <form method="HEAD" action="{{ url('user/defect') }}" >
                                         <label for="kitchen">Kitchen<span class="kitchen"></span></label>
-                                        <select type="kitchen" class="kitchen" id="kitchen" name="kitchen" onchange="this.form.submit();">
+                                        <select type="kitchen" class="kitchen" id="room" name="room" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
-                                            <option value="Sink">Sink</option>
-                                            <option value="Fridge">Fridge</option>
-                                            <option value="Oven">Oven</option>
-                                            <option value="Microwave">Microwave</option>
-                                            <option value="Door">Door</option>
-                                            <option value="Light">Light</option>
-                                            <option value="otherkitchen">Other</option>
+                                            <option value="kitchen_Sink">Sink</option>
+                                            <option value="kitchen_Fridge">Fridge</option>
+                                            <option value="kitchen_Oven">Oven</option>
+                                            <option value="kitchen_Microwave">Microwave</option>
+                                            <option value="kitchen_Door">Door</option>
+                                            <option value="kitchen_Light">Light</option>
+                                            <option value="kitchen_other">Other</option>
                                         </select>
                                         <input type="hidden" value="" />
                                         </form>

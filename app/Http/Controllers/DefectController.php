@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\defect;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 class DefectController extends Controller
 {
     /**
@@ -12,10 +14,11 @@ class DefectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($var)
     {
-        $defect=defect::all();
-        return view('user.defectcreate')->with('defect',$defect);
+      /*  $defect=defect::all();
+        return view('user.defectcreate')->with('defect',$defect);*/
+        return $var;
     }
 
     /**
@@ -35,10 +38,20 @@ class DefectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   $des=$_GET['description'];
+        $exp=$_GET['expectedReason'];
+        $id=Auth::user()->id;
+        $var1=$_GET['var1'];
+        $var2=$_GET['var2'];
+        $var3="Problem in ".$var1." ".$var2;
+        $defect= new defect;
+        $defect->title=$var3;
+        $defect->description=$des;
+        $defect->expectedReason=$exp;
+        $defect->idUser=$id;
+        $defect->save();
+        return redirect('user')->with('success','Defect has been added successfuly'); 
     }
-
     /**
      * Display the specified resource.
      *
