@@ -28,5 +28,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
 Route::get('/expert', [App\Http\Controllers\ExpertController::class, 'index'])->name('expert');
-
+Route::get('/expert/view', [App\Http\Controllers\ExpertController::class, 'view'])->name('view');
+Route::get('/expert/oldDefects', [App\Http\Controllers\ExpertController::class, 'oldDefects'])->name('oldDefects');
 });
+
+//Route::get('view', function()
+//{
+ //   return view('view');
+//});

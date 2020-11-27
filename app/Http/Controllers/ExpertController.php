@@ -15,4 +15,12 @@ class ExpertController extends Controller
     {
         return view('expert.index');
     }
+    public function view()
+    {
+        return view('expert.view');
+    }
+    public function oldDefects()
+    {
+        return view('expert.oldDefects');
+    }
 }
