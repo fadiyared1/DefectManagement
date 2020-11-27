@@ -18,21 +18,28 @@
                     @endif
                            <div class="row justify-content-center">                         
                         <h1 id="welcome">Please report your problem</h1>
-                            
-                         <div class="form-group">
+                           </div>
+                     <br>
+                     <div class="row justify-content-center">  
+                        <!-- <div class="form-group">   -->
+                                        <form method="HEAD" action="{{ url('user/defect') }}" >
                                         <label for="WC">WC<span class="WC"></span></label>
-                                        <select type="WC" class="WC" id="WC" name="WC">
+                                        <select type="WC" class="WC" id="WC" name="WC" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
-                                            <option value="Toilet Seat">Toilet Seat</option>
+                                            <option value="ToiletSeat">Toilet Seat</option>
                                             <option value="Door">Door </option>
                                             <option value="Light">Light</option>
                                             <option value="Sink">Sink</option>
                                             <option value="otherwc">Other</option>
                                             
                                         </select>
-                        
+                                        <input type="hidden" value="" />
+                                        </form>
+                         </div>              
+                         <div class="row justify-content-center">  
+                                        <form method="HEAD" action="{{ url('user/defect') }}" >
                                         <label for="Lounge">Lounge<span class="Lounge"></span></label>
-                                        <select type="Lounge" class="Lounge" id="Lounge" name="Lounge">
+                                        <select type="Lounge" class="Lounge" id="Lounge" name="Lounge" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
                                             <option value="TableChair">Table or chair</option>
                                             <option value="Couch">Couch</option>
@@ -40,11 +47,14 @@
                                             <option value="Window">Window</option>
                                             <option value="Light">Light</option>
                                             <option value="otherlounge">Other</option>
-                                            
                                         </select>
-                        
+                                        <input type="hidden" value="" />
+                                        </form>
+                         </div>
+                         <div class="row justify-content-center">
+                                        <form method="HEAD" action="{{ url('user/defect') }}" >
                                         <label for="kitchen">Kitchen<span class="kitchen"></span></label>
-                                        <select type="kitchen" class="kitchen" id="kitchen" name="kitchen">
+                                        <select type="kitchen" class="kitchen" id="kitchen" name="kitchen" onchange="this.form.submit();">
                                             <option value="">Choose...</option>
                                             <option value="Sink">Sink</option>
                                             <option value="Fridge">Fridge</option>
@@ -54,11 +64,13 @@
                                             <option value="Light">Light</option>
                                             <option value="otherkitchen">Other</option>
                                         </select>
+                                        <input type="hidden" value="" />
+                                        </form>
                                         
                                     </div>
                                     
-                                   <!-- <div class="row justify-content-center">-->
-                                    <img src="{{url('/images/plan5.png')}}" alt="plan" width="700" sheight="570" id="plan">
+                                    <div class="row justify-content-center">
+                                    <img src="{{url('/images/plan5.png')}}" alt="plan" width="700" height="570" id="plan">
                                     </div>
                                 
                        

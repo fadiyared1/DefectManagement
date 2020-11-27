@@ -41,23 +41,24 @@
                     @endif
                     <section class="mb-5 text-center">
 
-                        <p>Set a new password</p>
+                      <h2>Set a new password</h2>
+                      <br>
+                      <form action="#!">
                       
-                        <form action="#!">
+                        <div class="md-form md-outline">
+                          <label data-error="wrong" data-success="right" for="newPass">New password</label>
+                          <input type="password" id="newPass" class="form-control">
                       
-                          <div class="md-form md-outline">
-                            <input type="password" id="newPass" class="form-control">
-                            <label data-error="wrong" data-success="right" for="newPass">New password</label>
-                          </div>
+                        </div>
                       
-                          <div class="md-form md-outline">
-                            <input type="password" id="newPassConfirm" class="form-control">
-                            <label data-error="wrong" data-success="right" for="newPassConfirm">Confirm password</label>
-                          </div>
+                        <div class="md-form md-outline">
+                          <label data-error="wrong" data-success="right" for="newPassConfirm">Confirm password</label>
+                          <input type="password" id="newPassConfirm" class="form-control"> 
+                        </div>
+                      <br>
+                        <button type="submit" class="btn btn-dark">Change password</button>
                       
-                          <button type="submit" class="btn btn-primary mb-4">Change password</button>
-                      
-                        </form>
+                      </form>
                     </section>
                 </div>
             </div>

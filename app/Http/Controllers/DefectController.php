@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\defect;
 class DefectController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class DefectController extends Controller
      */
     public function index()
     {
-        //
+        $defect=defect::all();
+        return view('user.defectcreate')->with('defect',$defect);
     }
 
     /**

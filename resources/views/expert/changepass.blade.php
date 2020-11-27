@@ -17,7 +17,7 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                           <ul class="navbar-nav">
                           <li class="nav-item">
-                              <a class="nav-link" href="#">New defect</a>
+                              <a class="nav-link" href="{{  url('expert') }}">New defect</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{  url('expert/oldDefects') }}">Old Defects<span class="sr-only">(current)</span></a>
@@ -44,21 +44,22 @@
                    <!-- <div class="row justify-content-center"> <h2>New Defects</h2></div>-->
                    <section class="mb-5 text-center">
 
-<p>Set a new password</p>
-
+<h2>Set a new password</h2>
+<br>
 <form action="#!">
 
   <div class="md-form md-outline">
-    <input type="password" id="newPass" class="form-control">
     <label data-error="wrong" data-success="right" for="newPass">New password</label>
+    <input type="password" id="newPass" class="form-control">
+
   </div>
 
   <div class="md-form md-outline">
-    <input type="password" id="newPassConfirm" class="form-control">
     <label data-error="wrong" data-success="right" for="newPassConfirm">Confirm password</label>
+    <input type="password" id="newPassConfirm" class="form-control"> 
   </div>
-
-  <button type="submit" class="btn btn-primary mb-4">Change password</button>
+<br>
+  <button type="submit" class="btn btn-dark">Change password</button>
 
 </form>
 </section>

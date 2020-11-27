@@ -25,9 +25,6 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{  url('admin/changepass') }}">Change Password</a>
                         </li>
-                     <!--   <li class="nav-item">
-                          <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>-->
                       </ul>
                     </div>
                   </nav>
@@ -45,70 +42,37 @@
                           <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Reported By</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Expected Reason</th>
                             <th scope="col">Date and time</th>
-                            <th scope="col">Assign Expert</th>
+                            <th scope="col">Reported By</th>
+                            <th scope="col">Assign Expert</th> 
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td class = "select"> 
-                                <select>        
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                </select>
-                                <td ALIGN="center"></td>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-   <!--                        </tbody>
-                      </table>
-                      
-                   <table class="table">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>-->
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                      <tr>
+                      @if(count ($defect)>1)
+                      @foreach($defect as $def)
+                      <th>{{$def->id}}</th>
+                      <td>{{$def->title}}</td>
+                      <td>{{$def->description}}</td>
+                      <td>{{$def->expectedReason}}</td>
+                      <td>{{$def->idUser}}</td>
+                      <td>{{$def->dateOfDefect}}</td>
+                      <td class = "select"> 
+                        <select>        
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                        </select>
+                      <!--  <td ALIGN="center"></td>
+                      </td> -->
+                      </tr>
+                      @endforeach
+                      @else
+                      <p>No Posts Found</p>
+                      @endif
                         </tbody>
                       </table>
                 </div>
