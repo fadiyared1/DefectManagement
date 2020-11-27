@@ -23,4 +23,8 @@ class ExpertController extends Controller
     {
         return view('expert.oldDefects');
     }
+    public function changepass()
+    {
+        return view('expert.changepass');
+    }
 }
