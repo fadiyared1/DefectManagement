@@ -20,7 +20,7 @@
                           <a class="nav-link" href="#">Add Expert</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Change Password</a>
+                          <a class="nav-link" href="{{  url('admin/changepass') }}">Change Password</a>
                         </li>
                      <!--   <li class="nav-item">
                           <a class="nav-link disabled" href="#">Disabled</a>
