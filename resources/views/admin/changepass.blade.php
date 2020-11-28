@@ -17,17 +17,14 @@
                             <a class="nav-link" href="{{  url('admin') }}">New Defects</a>
                           </li>
                         <li class="nav-item ">
-                          <a class="nav-link" href="#">Old Defects</a>
+                          <a class="nav-link" href="{{  url('admin/oldDefects')}}">Old Defects</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Add Expert</a>
+                          <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert</a>
                         </li>
                         <li class="nav-item active">
                           <a class="nav-link" href="#">Change Password<span class="sr-only">(current)</span></a>
                         </li>
-                     <!--   <li class="nav-item">
-                          <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>-->
                       </ul>
                     </div>
                   </nav>
@@ -43,8 +40,13 @@
 
                       <h2>Set a new password</h2>
                       <br>
-                      <form action="#!">
+                   <form action="{!!route('changepassword')!!}" method="post">
                       
+                        <div class="md-form md-outline">
+                          <label data-error="wrong" data-success="right" for="newPass">Old Password</label>
+                          <input type="password" id="current_password" name="current_password" class="form-control">
+                    
+                        </div>  
                         <div class="md-form md-outline">
                           <label data-error="wrong" data-success="right" for="newPass">New password</label>
                           <input type="password" id="newPass" class="form-control">

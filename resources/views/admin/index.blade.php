@@ -1,6 +1,8 @@
+
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -17,7 +19,7 @@
                           <a class="nav-link" href="{{  url('admin') }}">New Defects<span class="sr-only">(current)</span></a>
                         </li>
                           <li class="nav-item">
-                          <a class="nav-link" href="#">Old Defects</a>
+                          <a class="nav-link" href="{{  url('admin/oldDefects')}}">Old Defects</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert</a>
@@ -61,18 +63,21 @@
                       <td>{{$def->idUser}}</td>
                       
                       <td class = "select"> 
-                        <select>        
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
-                        </select>
+                        <select>                           
+                          @if(count ($array)>0)
+                          @foreach($array as $a)
+                    <option value={{$a->id}}>{{$a->firstname}}</option>
+                          @endforeach
+                          @else
+                          <p>No users Found</p>
+                          @endif     
+                        </select> 
                       <!--  <td ALIGN="center"></td>
                       </td> -->
                       </tr>
                       @endforeach
                       @else
-                      <p>No Posts Found</p>
+                      <p>No defects Found</p>
                       @endif
                         </tbody>
                       </table>

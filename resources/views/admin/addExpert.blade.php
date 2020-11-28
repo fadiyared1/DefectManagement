@@ -17,7 +17,7 @@
                           <a class="nav-link" href="{{  url('admin') }}">New Defects<span class="sr-only">(current)</span></a>
                         </li>
                           <li class="nav-item">
-                          <a class="nav-link" href="#">Old Defects</a>
+                          <a class="nav-link" href="{{  url('admin/oldDefects')}}">Old Defects</a>
                         </li>
                         <li class="nav-item active">
                           <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert</a>
@@ -37,7 +37,7 @@
                         </div>
                     @endif
                   
-                    <form method="POST" action="{{ route('addExpert') }}">
+                    <form method="POST" action="{{ route('adregister') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -93,7 +93,6 @@
                             </div>
                         </div>
 
-
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -108,21 +107,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                <button type="submit" class="btn btn-dark">
+                                    {{ __('Add') }}
                                 </button>
                             </div>
                         </div>
                     </form>
-                     
-                        
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

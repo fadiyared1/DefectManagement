@@ -77,4 +77,16 @@ class RegisterController extends Controller
         $user->attachRole('user');
         return $user;
     }
+    /*protected function createexpert(array $data)
+    {
+         $user= User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'phonenb' => $data['phonenb'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        $user->attachRole('expert');
+        return $user;
+    }*/
 }

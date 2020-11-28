@@ -88,8 +88,8 @@
             
      <p>contact us:</p>
      <ul class="navbar-nav ml-auto">
-         <li class="nav-item">+96176010434</li>
-         <li class="nav-item"><a href="mailto:201710460@ua.edu.lb">201710460@ua.edu.lb</a></li>
+         <li class="nav-item">+9618888888</li>
+         <li class="nav-item"><a href="mailto:javashop@ua.edu.lb">javashop@ua.edu.lb</a></li>
      </ul>
     </nav>
 </footer>

@@ -27,6 +27,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/admin/changepass', [App\Http\Controllers\AdminController::class, 'changepass'])->name('changepass');
+Route::post('admin/changepass', 'App\Http\Controllers\AdminController@changepassword')->name('changepassword');
+Route::get('/admin/oldDefects', [App\Http\Controllers\AdminController::class, 'olddef'])->name('olddef');
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
 Route::get('/user/defect', [App\Http\Controllers\UserController::class, 'defect'])->name('defect');
 Route::get('/user/defect/create', [App\Http\Controllers\DefectController::class, 'store'])->name('store');
@@ -34,7 +36,8 @@ Route::get('/expert', [App\Http\Controllers\ExpertController::class, 'index'])->
 Route::get('/expert/view', [App\Http\Controllers\ExpertController::class, 'view'])->name('view');
 Route::get('/expert/oldDefects', [App\Http\Controllers\ExpertController::class, 'oldDefects'])->name('oldDefects');
 Route::get('/expert/changepass', [App\Http\Controllers\ExpertController::class, 'changepass'])->name('changepass');
-Route::get('/admin/addExpert', [App\Http\Controllers\AdminController::class, 'addExpert'])->name('addExpert');
-Route::post('admin/addExpert', 'AdminController@create')->name('admin.create');
+Route::get('/admin/addExpert', [App\Http\Controllers\AdminController::class, 'addExpert'])->name('admin.create');
+Route::post('admin/addExpert', 'App\Http\Controllers\AdminController@adregister')->name('adregister');
+
 });
 
