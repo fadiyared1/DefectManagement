@@ -25,9 +25,14 @@ class ExpertController extends Controller
         $jour=journal::all();
         $assig=assignment::all();
         $stat=status::all();
-        $defect=defect::join('assignment','defect.id','=','assignment.idDefect')->where('assignment.idExpert','=',$u1->id)->get();
+        $defect=defect::join('assignment','defect.id','=','assignment.idDefect')
+                      ->join('journal','assignment.idDefect','=','journal.idDefect')
+                        ->where('assignment.idExpert','=',$u1->id)
+                        ->where('idStatus','=',2)
+                        ->get();
+        
         return view('expert.index')->with('defect',$defect)->with('assig',$assig)->with('jour',$jour)->with('u1',$u1);
-
+        //return $defect;
         
     }
     public function view($id)
@@ -46,7 +51,12 @@ class ExpertController extends Controller
         $jour=journal::all();
         $assig=assignment::all();
         $stat=status::all();
-        $defect=defect::join('assignment','defect.id','=','assignment.idDefect')->where('assignment.idExpert','=',$u1->id)->get();
+        //$defect=defect::join('assignment','defect.id','=','assignment.idDefect')->where('assignment.idExpert','=',$u1->id)->get();
+        $defect=defect::join('assignment','defect.id','=','assignment.idDefect')
+                        ->join('journal','assignment.idDefect','=','journal.idDefect')
+                        ->where('assignment.idExpert','=',$u1->id)
+                        ->where('idStatus','!=',2)
+                        ->get();
         return view('expert.oldDefects')->with('defect',$defect)->with('assig',$assig)->with('jour',$jour)->with('u1',$u1)->with('stat',$stat);
     }
     public function changepass()
@@ -74,7 +84,6 @@ class ExpertController extends Controller
         $def=$_GET["defect"];
         $ans=$_GET["ad"];
        // $jr=new journal;
-        
         $jr=journal::where('idDefect',$def)->first();
         if($ans='accept'){
         $jr->idStatus=3;

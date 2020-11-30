@@ -78,6 +78,10 @@
                         </select> 
                         <input type="hidden" name="defect" value={{$def->id}} />
                         </form>
+                        @else
+                        <!--{{$as=$assig->where('idDefect','=',$def->id)->first()}}-->
+                        <!--{{$exp=$usr->where('id','=',$as->idExpert)->first()}}-->
+                        {{$exp->firstname}} {{$exp->lastname}}
                         @endif
                       </tr>
                       @endforeach

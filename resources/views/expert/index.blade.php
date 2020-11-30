@@ -55,10 +55,11 @@
                         </thead> 
                         <tbody>
                           <tr>
-                           <!-- {{$f= $jour->where('idStatus','=',1)->first()}}-->
+                           
+                           
                             @if(count ($defect)>0)
                             @foreach($defect as $def)
-                            @if($f->idDefect==$def->id)
+                            
                             <th>{{$id=$def->id}}</th>
                             <td>{{$def->title}}</td>
                             <td><a href="{{ url('expert/view',$id)}}"><button>View</button></a></td>
@@ -76,7 +77,7 @@
                             </td> 
                           </tr>
                           
-                          @endif
+                          
                           @endforeach
                          
                         </tbody>

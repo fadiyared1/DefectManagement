@@ -54,18 +54,21 @@
                       </thead> 
                       <tbody>
                         <tr>
-                         <!-- {{$f= $jour->where('idStatus','=',1)->first()}}-->
+                         
                           @if(count ($defect)>0)
                           @foreach($defect as $def)
-                          @if($f->idDefect!=$def->id)
+                          
                           <th>{{$id=$def->id}}</th>
                           <td>{{$def->title}}</td>
                           <td><a href="{{ url('expert/view',$id)}}"><button>View</button></a></td>
                           <td>{{$def->dateOfDefect}}</td>
                           <!-- {{$s= $jour->where('idDefect','=',$def->idDefect)->first()}}-->
                           <!-- {{$ss= $stat->where('id','=',$s->idStatus)->first()}}-->
-                          <td>{{$ss->status}}
-                          <td class = "select"> 
+                          <td>{{$ss->status}}</td>
+                             <!--{{$f=$jour->where('idDefect','=',$def->id)->first()}}-->
+                          @if($f->idStatus!=5)
+                          <td class = "select">
+                            
                             <form method="HEAD" action="{{ url('expert/changestatus') }}" >
                               <select id="status" name="status" onchange="this.form.submit();">        
                                       <option value="">Choose</option>
@@ -75,10 +78,14 @@
                               </select>
                               <input type="hidden" name="defect" value={{$def->idDefect}} />
                             </form>
+                            @else
+                              Fixed!
+                              @endif
                           </td> 
+                          
                         </tr>
                         
-                        @endif
+                        
                         @endforeach
                        
                       </tbody>

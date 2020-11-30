@@ -27,13 +27,15 @@ class AdminController extends Controller
     }
     public function index()
     {   
+        $assig=assignment::all();
         $jour=journal::all();
         $defect=defect::all();
         $status=status::all();
         //$defect = defect::join('journal','defect.id','=','journal.idDefect')->where('idStatus',1)->get();
-        $usr=User::join('defect','Users.id','=','defect.idUser')->get();
+        //$usr=User::join('defect','Users.id','=','defect.idUser')->get();
+        $usr=User::all();
         $array = User::whereRoleIs('expert')->get();//('admin')->orWhereRoleIs('superadmin')->get();
-        return view('admin.index')->with('defect',$defect)->with('array',$array)->with('usr',$usr)->with('jour',$jour)->with('status',$status);
+        return view('admin.index')->with('defect',$defect)->with('array',$array)->with('usr',$usr)->with('jour',$jour)->with('status',$status)->with('assig',$assig);
     }
     public function adview($id)
     {   $jour = journal::where('idDefect',$id)->first();
