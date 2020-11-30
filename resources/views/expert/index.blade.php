@@ -47,70 +47,43 @@
                           <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Details</th>
                             <th scope="col">Date and time</th>
-                            <th scope="col">View</th>
+                            <!--<th scope="col">Status</th>-->
                             <th scope="col">Respond</th>
                           </tr>
-                        </thead>
+                        </thead> 
                         <tbody>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td><a href="{{  url('expert/view') }}">View</a></td>
+                           <!-- {{$f= $jour->where('idStatus','=',1)->first()}}-->
+                            @if(count ($defect)>0)
+                            @foreach($defect as $def)
+                            @if($f->idDefect==$def->id)
+                            <th>{{$id=$def->id}}</th>
+                            <td>{{$def->title}}</td>
+                            <td><a href="{{ url('expert/view',$id)}}"><button>View</button></a></td>
+                            <td>{{$def->dateOfDefect}}</td>
+                            
                             <td class = "select"> 
-                                <select>        
-                                        <option value="volvo">Accept</option>
-                                        <option value="saab">Decline</option>
+                              <form method="HEAD" action="{{ url('expert/assign') }}" >
+                                <select id="ad" name="ad" onchange="this.form.submit();">        
+                                        <option value="">Choose</option>
+                                        <option value="accept">Accept</option>
+                                        <option value="decline">Decline</option>
                                 </select>
-                                <td ALIGN="center"></td>
+                                <input type="hidden" name="defect" value={{$def->idDefect}} />
+                              </form>
                             </td> 
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-   <!--                        </tbody>
-                      </table>
-                      
-                   <table class="table">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>-->
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                          
+                          @endif
+                          @endforeach
+                         
                         </tbody>
                       </table>
+                       @else
+                          <p>No defects Found</p>
+                      @endif
                 </div>
             </div>
         </div>

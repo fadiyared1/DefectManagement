@@ -14,13 +14,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" href="{{  url('admin') }}">New Defects<span class="sr-only">(current)</span></a>
-                        </li>
-                          <li class="nav-item">
-                          <a class="nav-link" href="{{  url('admin/oldDefects')}}">Old Defects</a>
+                          <a class="nav-link" href="{{  url('admin') }}">Journal</span></a>
                         </li>
                         <li class="nav-item active">
-                          <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert</a>
+                          <a class="nav-link" href="{{  url('admin/addExpert') }}">Add Expert<span class="sr-only">(current)</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{  url('admin/changepass') }}">Change Password</a>

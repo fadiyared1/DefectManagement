@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\defect;
 use App\Models\User;
+use App\Models\Journal;
 use Illuminate\Support\Facades\Auth;
 class DefectController extends Controller
 {
@@ -50,6 +51,10 @@ class DefectController extends Controller
         $defect->expectedReason=$exp;
         $defect->idUser=$id;
         $defect->save();
+        $jour=new journal;
+        $jour->idDefect=$defect->id;
+        $jour->idStatus=1;
+        $jour->save();
         return redirect('user')->with('success','Defect has been added successfuly'); 
     }
     /**

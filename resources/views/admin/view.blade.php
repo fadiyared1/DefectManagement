@@ -18,7 +18,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="row justify-content-center">                         
+                           <div class="row justify-content-center">                         
                         <h1 id="welcome">Defect details</h2>
                         <br>
                          <div id="textarea">   
@@ -39,12 +39,14 @@
                             
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                   <a href="/expert">
+                                   <a href="/admin">
                                     <button class="btn btn-dark">
                                         back 
                                     </button></a>
                                 </div>
                             </div>
+                            
+                         
                 </div>
             </div>
         </div>
