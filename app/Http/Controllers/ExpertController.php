@@ -96,12 +96,12 @@ class ExpertController extends Controller
         
         $jr=journal::where('idDefect',$def)->first();
         
-        if($ans='pending'){
+        if($ans =='pending'){
         $jr->idStatus=4;
         $jr->save();
         return back()->with('success','Defect status changed to pending!');
         }
-        else if($ans='fixed'){
+        else if($ans=='fixed'){
             $jr->idStatus=5;
             $jr->save();
             return back()->with('success','Defect state changed to fixed!');
