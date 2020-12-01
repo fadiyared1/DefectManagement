@@ -63,20 +63,7 @@
                                 @enderror
                             </div>
                         </div>
-<!--                        <div class="form-group row">
-                            <label for="idRole" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="idRole" type="number" min="0" max="2" class="form-control @error('idRole') is-invalid @enderror" name="idRole" value="{{ old('idRole') }}">
-
-                                @error('idRole')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>-->
-
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

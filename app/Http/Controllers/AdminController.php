@@ -64,9 +64,9 @@ class AdminController extends Controller
         ]);    
     }
 
-        protected function create(array $data)
-        {
-            $user= user::create([
+    protected function ecreate(array $data)
+    {
+         $user= User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'phonenb' => $data['phonenb'],
@@ -74,18 +74,23 @@ class AdminController extends Controller
             'password' => Hash::make($data['password']),
         ]);
         $user->attachRole('expert');
-        return $user;   
+        return $user;
 
-        }
+    }
         public function adregister(Request $request)
         {
-            $this->validator($request->all())->validate();
-            event(new user($user = $this->create($request->all())));
-           // $this->guard()->login($user);
-            //return $this->registered($request, $user)
-          //   ?: redirect($redirectTo);
-            //return redirect($redirectTo);
+            $validator = $this->validator($request->all());
+
+            if ($validator->fails()) {
+                $this->throwValidationException(
+                    $request, $validator
+                );
+            }
+            $this->ecreate($request->all());
+    
+            return back()->with('success','Expert added successfully');
         }
+        
         public function changepass()
         {
             return view('admin.changepass');
